@@ -41,7 +41,6 @@ for(let i=0; i < elementList.length; i ++){
     let newSec = document.createElement('li');
     let a = document.createElement('a');
     a.textContent = elementList[i].id;
-/*    newSec.textContent = elementList[i].id; */
     a.setAttribute('href', "#" + elementList[i].id);
     newSec.appendChild(a);
     console.log(newSec);

@@ -1,29 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Roboto&display=swap');
+
 body {
     background: #000000;
     background: linear-gradient(180deg, #000044 0%, #444444 100%);
     margin: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Roboto', serif;
     color: #fff;
 }
 
 
 /* Typeography General*/
+
+
+
 h1 {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Michroma', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
-        font-size: 7em;
-        margin: 2em 4rem 1em;
+        font-size: 5em;
+        margin: 1em 4rem 1em;
     }
 }
 
 h2 {
     border-bottom: 1px solid #cc1;
-    font-family: 'Oxygen', Sans-Serif;
+    font-family: 'Michroma', Sans-Serif;
     font-size: 3em;
     color: #fff;
 }
@@ -117,6 +122,36 @@ section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right;
+}
+
+/* containers for greeting div */
+#greeting{
+    display: flex;
+    flex-direction: row;
+}
+
+#logoDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+#logoDiv h1{
+    margin: 0px;
+    font-size: 2em;
+}
+#logoDiv img{
+    max-height: 200px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+}
+#landingIntro{
+    display: block;
+    padding: 10px;
+}
+#landingIntro h1{
+    margin: 0px;
+    font-size: 1.5em;
 }
 
 /* Background Circles */
