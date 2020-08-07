@@ -117,6 +117,18 @@ section {
         padding: 4em;
     }
 }
+@media(min-width:768px){
+    #logoDiv img{
+        max-height: 200px;
+        max-width: 350px;
+        height: auto;
+        width: auto;
+    }
+    #logoDiv h1{
+    margin: 0px;
+    font-size: 5vmin;
+}
+}
 
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
@@ -137,11 +149,11 @@ section:nth-of-type(even) .landing__container {
 }
 #logoDiv h1{
     margin: 0px;
-    font-size: 2em;
+    font-size: 4vmin;
 }
 #logoDiv img{
-    max-height: 200px;
-    max-width: 300px;
+    max-height: 100px;
+    max-width: 200px;
     height: auto;
     width: auto;
 }
@@ -151,7 +163,7 @@ section:nth-of-type(even) .landing__container {
 }
 #landingIntro h1{
     margin: 0px;
-    font-size: 1.5em;
+    font-size: 5vmin;
 }
 
 /* Background Circles */
