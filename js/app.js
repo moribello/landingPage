@@ -1,25 +1,10 @@
-/*
- *
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- *
- * Dependencies: None
- *
- * JS Version: ES2015/ES6
- *
- * JS Standard: ESlint
- *
-*/
-
 /**
  * Define Global Variables
  *
 */
 const elementList = document.querySelectorAll('section');
 const navbarItems = document.querySelector('#navbar__list');
-
+let currentSection = document.querySelector('#section1') /*initializes current selection and sets its value to section 1 */
 
 /**
  * End Global Variables
@@ -38,13 +23,21 @@ const navbarItems = document.querySelector('#navbar__list');
 
 // build the nav
 for(let i=0; i < elementList.length; i ++){
-    let newSec = document.createElement('li');
-    let a = document.createElement('a');
-    a.textContent = elementList[i].id;
-    a.setAttribute('href', "#" + elementList[i].id);
-    newSec.appendChild(a);
-    console.log(newSec);
+    let newSec = document.createElement('li'); //creates new li element
+    let elementName = elementList[i].id;    //gets element name using element list and current iteration number
+    let link = document.createElement('a'); //creates link
+    link.href = "#"+elementName; //creates href value
+    newSec.textContent = elementName; //adds element name to text content
+    //newSec.id = elementName; 
+    newSec.appendChild(link);
+    //add event listener for each li
+    newSec.addEventListener('click', function(){
+        document.getElementById(elementName).scrollIntoView({behavior:"smooth"});
+    });
+
     navbarItems.appendChild(newSec);
+    
+
 }
 
 
@@ -52,6 +45,14 @@ for(let i=0; i < elementList.length; i ++){
 
 
 // Scroll to anchor ID using scrollTO event
+
+function scrollToSection(evt){
+    let section = event.target.id;
+    section.href = "#"+event.target.id;
+    console.log(section);
+//    section.scrollIntoView({behavior: "smooth"});
+}
+
 
 
 /**
