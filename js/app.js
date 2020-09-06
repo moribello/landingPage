@@ -57,11 +57,11 @@ for(let i=0; i < elementList.length; i ++){
 
 // Scroll to anchor ID using scrollTO event
 
-function scrollToSection(evt){
+/*function scrollToSection(evt){
     let section = event.target;
     console.log(section);
     document.getElementById(event.target.id).scrollIntoView({behavior:"smooth"})
-}
+}*/
 
 
 
