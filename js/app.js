@@ -11,7 +11,20 @@ let currentSection = document.querySelector('#section1') /*initializes current s
  * Start Helper Functions
  *
 */
-
+// Add class 'active' to section when it is near top of viewport
+function makeActive() {
+  for (const section of elementList) {
+    const box = section.getBoundingClientRect(); 
+    if (box.top <= 10 && box.bottom >= 150) {
+        let activeElm = document.getElementById(section.id);
+        activeElm.classList.add("your-active-class")
+//        console.log(section.id + " top is " + box.top)
+    } else {
+      let inactiveElm = document.getElementById(section.id);
+        inactiveElm.classList.remove("your-active-class")
+    }
+  }
+}
 
 
 
@@ -28,12 +41,10 @@ for(let i=0; i < elementList.length; i ++){
     let link = document.createElement('a'); //creates link
     link.href = "#"+elementName; //creates href value
     newSec.textContent = elementName; //adds element name to text content
-    //newSec.id = elementName; 
     newSec.appendChild(link);
-    //add event listener for each li
     newSec.addEventListener('click', function(){
         document.getElementById(elementName).scrollIntoView({behavior:"smooth"});
-    });
+    }); //add event listener for each li
 
     navbarItems.appendChild(newSec);
     
@@ -47,10 +58,9 @@ for(let i=0; i < elementList.length; i ++){
 // Scroll to anchor ID using scrollTO event
 
 function scrollToSection(evt){
-    let section = event.target.id;
-    section.href = "#"+event.target.id;
+    let section = event.target;
     console.log(section);
-//    section.scrollIntoView({behavior: "smooth"});
+    document.getElementById(event.target.id).scrollIntoView({behavior:"smooth"})
 }
 
 
@@ -60,7 +70,9 @@ function scrollToSection(evt){
  * Begin Events
  *
 */
-
+document.addEventListener("scroll", function() {
+  makeActive();
+});
 // Build menu
 
 // Scroll to section on link click
